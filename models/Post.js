@@ -18,12 +18,12 @@ Post.init(
         type: DataTypes.STRING,
         allowNull: false
       },
-      content: {
+      post_url: {
         type: DataTypes.STRING,
         allowNull: false,
-        // validate: {
-        //   i: true
-        // }
+        validate: {
+          isUrl: true
+        }
       },
       user_id: {
         type: DataTypes.INTEGER,

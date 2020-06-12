@@ -10,27 +10,26 @@
 
 <body>
   <div class="wrapper">
-    <header>
-      <h1>
-        <a href="/">Tech Blog</a>
-      </h1>
-    
-    <nav>
-    {{#if loggedIn}}
-    <a href="/dashboard">dashboard</a>
-    <button id="logout" class="btn-no-style">logout</button>
-    {{else}}
-    <a href="/login">login</a>
-    {{/if}}
-    </nav>
-    
-    </header>
+      <header class="hero">
+          <div class"link-color">
+          <nav>
+            <a href="/">home</a>
+            <a href="/dashboard">dashboard</a>
+            {{#unless loggedIn}}
+            <a href="/logout">logout</a>
+            {{/unless}}
+            {{#if loggedIn}}
+            <a href="/logout">logout</a>
+            {{/if}}
+      </nav>          
+          </div>
+
+          <h1 class="app-title"><i class="fab "></i> Tech Blog</h1>
+      </header>
+
     <main>
       {{{ body }}}
     </main>
-    <footer>
-      Thanks for visiting!
-    </footer>
   </div>
 
     {{#if loggedIn}}

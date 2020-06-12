@@ -8,8 +8,8 @@ const helpers = require('./utils/helpers');
 
 // handlebars
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});
-// const hbs = exphbs.create({helpers});
+// const hbs = exphbs.create({});
+const hbs = exphbs.create({helpers});
 
 // session connection to sequelize database
 const session = require('express-session');
@@ -42,6 +42,6 @@ app.set('view engine', 'handlebars');
 app.use(routes);
 
 // turn on connection to db and server
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
