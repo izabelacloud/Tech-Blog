@@ -1,8 +1,8 @@
-# Tech Blog (MVC)
+# Tech Blog 
 
 ## Description
 
-The Tech Blog is a blog website where developers can publish their blog posts and comment on other developers’ posts as well. This application follows the MVP paradigm and it is using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
+The Tech Blog is a blog website where developers can publish their blog posts and comment on other developers’ posts as well. This application follows the MVC paradigm and it is using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
 
 ## Table of Contents
 
