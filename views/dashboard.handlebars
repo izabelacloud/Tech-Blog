@@ -2,14 +2,11 @@
 {{#if posts.length}}
 <section>
   <h2>Your Posts</h2>
-  <ol>
     {{#each posts as |post|}}
-    <li>
       {{> dashboard-postinfo post}}
       {{!-- <a href="/dashboard/edit/{{post.id}}">Edit post</a> --}}
-    </li>
     {{/each}}
-  </ol>
+
 </section>
 {{/if}}
 
