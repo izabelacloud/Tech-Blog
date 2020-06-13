@@ -17,6 +17,7 @@ The Tech Blog is a blog website where developers can publish their blog posts an
 ## Deployed Application 
 
 [Tech Blog](https://whispering-everglades-49226.herokuapp.com/)
+![Image](https://github.com/izabelacloud/Tech-Blog/blob/master/assets/tech-blog.png?raw=true)
 
 
 ## User Story 
