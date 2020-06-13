@@ -27,19 +27,20 @@ User.init(
     // define a username column
     username: {
         type: DataTypes.STRING,
-        allowNull:false
+        allowNull:false,
+        unique: true
     },
     // define an email column 
-    email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        // there cannot be any duplicate email values in this table
-        unique: true,
-        // if allowNull is set to false, we can run out data through validators before creating the table data
-        validate: {
-            isEmail: true
-        }
-    },
+    // email: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    //     // there cannot be any duplicate email values in this table
+    //     unique: true,
+    //     // if allowNull is set to false, we can run out data through validators before creating the table data
+    //     validate: {
+    //         isEmail: true
+    //     }
+    // },
     // define a password column 
     password: {
         type: DataTypes.STRING,

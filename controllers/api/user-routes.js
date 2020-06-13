@@ -26,7 +26,11 @@ router.get('/:id', (req, res) => {
         include: [
           {
             model: Post,
-            attributes: ['id', 'title', 'post_url', 'content', 'created_at']
+            attributes: [
+                'id', 
+                'title', 
+                'content', 
+                'created_at']
           },
           // include the Comment model here:
           {
@@ -60,10 +64,9 @@ router.get('/:id', (req, res) => {
 
 // POST /api/users - similar to INSERT INTO users / VALUES 
 router.post('/', (req, res) => {
-    // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
+    // expects {username: 'Lernantino', password: 'password1234'}
     User.create({
         username: req.body.username,
-        email: req.body.email,
         password: req.body.password
     })
     // store user data during session 
@@ -81,14 +84,14 @@ router.post('/', (req, res) => {
 
 // POST to identify users 
 router.post('/login', (req, res) => {
-    // expects {email: 'lernantino@gmail.com', password: 'password1234'}
+    // expects {username: 'lernantino', password: 'password1234'}
     User.findOne({
         where: {
-            email: req.body.email
+            username: req.body.username
         }
     }).then(dbUserData => {
         if (!dbUserData) {
-            res.status(400).json({ message: 'No user with that email address!'});
+            res.status(400).json({ message: 'No user with that username!'});
             return;
         }
         // res.json({ user: dbUserData});
@@ -124,7 +127,6 @@ router.post('/logout', (req, res) => {
 
 // PUT /api/users/1 - similar to UPDATE 
 router.put('/:id', (req, res) => {
-    // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
     // if req.body has exact key/value pairs to match the model, you can just use `req.body` instead
 
     User.update(req.body, {
