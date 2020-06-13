@@ -4,21 +4,6 @@ const { Post, User, Comment } = require('../models');
 const router = require('express').Router();
 
 
-// rendering all posts to homepage
-// router.get('/', (req, res) => {
-//     res.render('homepage', {
-//       id: 1,
-//       post_url: 'https://handlebarsjs.com/guide/',
-//       title: 'Handlebars Docs',
-//       created_at: new Date(),
-//       vote_count: 10,
-//       comments: [{}, {}],
-//       user: {
-//         username: 'test_user'
-//       }
-//     });
-//   });
-
 router.get('/', (req, res) => {
     Post.findAll({
       attributes: [
@@ -106,6 +91,11 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// redirecting users to sign in page once they sign up
+router.get('/signup', (req, res) => {
+    res.render('signup');
+});
+
 //rendering one post to the single-post page
 router.get('/post/:id', (req, res) => {
     Post.findOne({
@@ -118,7 +108,6 @@ router.get('/post/:id', (req, res) => {
         'content',
         'title',
         'created_at'
-        // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
       ],
       include: [
         {
