@@ -13,14 +13,18 @@
       <header class="hero">
           <div class"link-color">
           <nav>
+
+
+
             <a href="/">home</a>
-            <a href="/dashboard">dashboard</a>
-            {{#unless loggedIn}}
-            <a href="/logout">logout</a>
-            {{/unless}}
             {{#if loggedIn}}
-            <a href="/logout">logout</a>
+            <a href="/dashboard">dashboard</a>
+            <a href="/" id="logout">logout</a>
+            {{else}}
+            <a href="/login">login</a>
             {{/if}}
+
+
       </nav>          
           </div>
 
