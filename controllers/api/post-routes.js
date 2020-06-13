@@ -3,7 +3,7 @@ const { Post, User, Comment} = require('../../models');
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
-// GET all users
+// GET all posts
 router.get('/', (req, res) => {
     console.log('======================');
     Post.findAll({
@@ -12,7 +12,6 @@ router.get('/', (req, res) => {
                     'title',
                     'content',
                     'created_at'
-                    //    [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
                     ],
         order: [['created_at', 'DESC']],          
         include: [
@@ -30,7 +29,7 @@ router.get('/', (req, res) => {
             }
         ]
     })
-        .then(dbPostData => res.json(dbPostData))
+        .then(dbPostData => res.json(dbPostData.reverse()))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -48,7 +47,6 @@ router.get('/:id', (req, res) => {
                    'content',
                    'title',
                    'created_at'
-                //    [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
                 ],
       include: [
         {
@@ -80,7 +78,7 @@ router.get('/:id', (req, res) => {
 
 // creating a post
 router.post('/', withAuth, (req, res) => {
-    // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
+    // create 1 post
     Post.create({ 
         title: req.body.title,
         content: req.body.content,

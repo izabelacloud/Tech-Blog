@@ -1,5 +1,3 @@
-// let loginHandler = require('./login.js');
-
 
 async function signupFormHandler(event) {
     event.preventDefault();

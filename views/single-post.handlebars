@@ -1,35 +1,24 @@
-<!-- displaying articles -->
+
 {{> post-info post}}
 
-<!-- displaying form and comments-->
-<!-- only display if logged in -->
 {{#if loggedIn}}
-{{!-- <form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button type="submit">add comment</button>
-  </div>
-</form> --}}
-
 <div class="card">
     <h3 class="card-header"></h3>
-    <form class="card-body comment-form">
+    <form class="card-body comment-form" id="comment-form">
 
         <label class="form-label">Comment</label>
         <input id="comment" name="comment-body" class="form-input" />
 
         <button type="submit" class="btn">Submit</button>
+        {{!-- <button id="posts-comments" type="submit" class="btn"><a href="/posts-comments">Submit</a></button> --}}
     </form>
 </div>
-
-
 {{/if}}
+
 
 {{> comments post.comments}}
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
+{{!-- <script src="/javascript/posts-comments.js"></script> --}}
 {{/if}}
