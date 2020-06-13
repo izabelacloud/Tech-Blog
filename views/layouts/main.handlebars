@@ -11,20 +11,15 @@
 <body>
   <div class="wrapper">
       <header class="hero">
-          <div class"link-color">
-          <nav>
-
-
-
-            <a href="/">home</a>
-            <a href="/dashboard">dashboard</a>
+          <div>
+          <nav class"nav">
+            <a class="link" href="/">home</a>
+            <a class="link" href="/dashboard">dashboard</a>
             {{#if loggedIn}}
-            <a href="/" id="logout">logout</a>
+            <a class="link" href="/" id="logout">logout</a>
             {{else}}
-            <a href="/login">login</a>
+            <a class="link" href="/login">login</a>
             {{/if}}
-
-
       </nav>          
           </div>
 

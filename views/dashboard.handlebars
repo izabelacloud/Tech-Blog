@@ -1,5 +1,3 @@
-<button type="submit" class="btn"><a href="/dashboard/new">+ New Post</a></button>
-
 
 {{#if posts.length}}
 <section>
@@ -7,12 +5,14 @@
   <ol>
     {{#each posts as |post|}}
     <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+      {{> dashboard-postinfo post}}
+      {{!-- <a href="/dashboard/edit/{{post.id}}">Edit post</a> --}}
     </li>
     {{/each}}
   </ol>
 </section>
 {{/if}}
+
+<button type="submit" class="btn"><a href="/dashboard/new">+ New Post</a></button>
 
 <script src="/javascript/add-post.js"></script>

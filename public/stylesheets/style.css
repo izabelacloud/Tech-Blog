@@ -194,12 +194,6 @@
     line-height: 1.25;
   }
 
-  h4 {
-    font-weight: 700;
-    margin: 0;
-    color: var(--primary);
-    line-height: 1.25;
-  }
 
   .link-color {
       color: var(--primary);
@@ -234,11 +228,11 @@
     display: block;
     margin: 5px 0;
     border-radius: var(--border-radius);
-    color: var(--primary);
+    color: white;
     border: none;
     outline: none;
     background-color: var(--light-dark);
-    box-shadow: 3px 3px var(--dark);
+    /* box-shadow: 3px 3px var(--dark); */
     transform: translate(-1px, -1px);
   }
   
@@ -339,13 +333,32 @@
   .card-header {
     color: var(--primary);
     background-color: var(--dark);
-    padding: 2.5%;
+    padding: 1%;
     border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
-    width: 100%
   }
   
   .card-body {
-    padding: 2.5%;
+    padding: 1%;
+  }
+
+  h4 {
+    font-weight: 700;
+    margin: 0;
+    color: var(--primary);
+    line-height: 1.25;
+  }
+
+  .link {
+      color: var(--primary);
+  }
+
+  .login-link {
+    color: var(--dark);
+}
+
+  .nav {
+      padding: 10px;
+      line-height: 1.25;
   }
 
 
