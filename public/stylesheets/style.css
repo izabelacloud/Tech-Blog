@@ -326,13 +326,13 @@
   /* CARDS */
   .card {
     margin: 0 0 20px 0;
-    border: 1px var(--dark);
+    border: 2px solid var(--dark);
     border-radius: var(--border-radius);
   }
   
   .card-header {
     color: var(--primary);
-    background-color: var(--light-dark);
+    background-color: var(--dark);
     padding: 1%;
     border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
   }
