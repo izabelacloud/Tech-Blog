@@ -50,7 +50,9 @@ User.init(
         },
         // set up beforeUpdate lifecycle "hook" functionality
         async beforeUpdate(updatedUserData) {
-            updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+            if (updatedUserData.changed('password')) {
+                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+            }
             return updatedUserData;
         }
     },

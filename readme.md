@@ -9,6 +9,7 @@ The Tech Blog is a blog website where developers can publish their blog posts an
 * [Deployed Application](#deployed-application)
 * [User Story](#user-story)
 * [Usage](#usage)
+* [Installation](#installation)
 * [License](#license)
 * [Contributing](#contributing)
 * [Questions](#questions)
@@ -16,7 +17,7 @@ The Tech Blog is a blog website where developers can publish their blog posts an
 
 ## Deployed Application 
 
-[Tech Blog](https://whispering-everglades-49226.herokuapp.com/)
+[https://tech-blog-web-production.up.railway.app](https://tech-blog-web-production.up.railway.app)
 ![Image](https://github.com/izabelacloud/Tech-Blog/blob/master/assets/tech-blog.png?raw=true)
 
 
@@ -61,6 +62,46 @@ THEN I am automatically signed out of the site<br />
 ## Usage
 The Tech Blog is a blog website where developers can publish their blog posts and comment on other developers’ posts as well. 
 
+## Installation
+
+1. Clone the repository and install dependencies:
+
+   ```sh
+   git clone https://github.com/izabelacloud/Tech-Blog.git
+   cd Tech-Blog
+   npm install
+   ```
+
+2. Create a `.env` file in the project root with the following variables:
+
+   ```sh
+   DB_NAME=tech_blog
+   DB_USER=root
+   DB_PW=your_mysql_password
+   PORT=3001
+   SESSION_SECRET=your_session_secret
+   ```
+
+   (Alternatively, set `JAWSDB_URL` to a full MySQL connection string, which takes priority over the individual `DB_*` variables.)
+
+3. Seed the database:
+
+   ```sh
+   npm run seed
+   ```
+
+4. Start the app:
+
+   ```sh
+   npm start
+   ```
+
+   or, for auto-restart during development:
+
+   ```sh
+   npm run watch
+   ```
+
 ## License
 
 This project is licensed under the MIT.
@@ -72,5 +113,5 @@ Izabela Petrovicova
 
 ## Questions
 
-If you have any questions about the repository, contact me directly at i.petrovicova@gmail.com. You can find more of my work at https://github.com/izabelacloud.
+If you have any questions about the repository, contact me directly at [i.petrovicova@gmail.com](mailto:i.petrovicova@gmail.com). You can find more of my work at [https://github.com/izabelacloud](https://github.com/izabelacloud).
 
